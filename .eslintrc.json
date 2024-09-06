@@ -1,0 +1,36 @@
+{
+  "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true,  // Adds Node.js environment
+      "cypress/globals": true  // Adds Cypress globals after plugin installation
+  },
+  "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended",
+      "plugin:cypress/recommended"  // Add Cypress recommended rules
+  ],
+  "parserOptions": {
+      "ecmaVersion": 12,
+      "sourceType": "module",
+      "ecmaFeatures": {
+          "jsx": true
+      }
+  },
+  "plugins": [
+      "react",
+      "react-hooks",
+      "cypress"  // Adds Cypress plugin
+  ],
+  "settings": {
+      "react": {
+          "version": "detect"
+      }
+  },
+  "rules": {
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "react-hooks/exhaustive-deps": "off",
+    "react/prop-types": "off"
+}
+}

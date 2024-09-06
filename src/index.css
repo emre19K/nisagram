@@ -1,0 +1,347 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nav-fixed {
+    @apply fixed top-0 left-0 h-full w-64 bg-white shadow-md z-10;
+  }
+  .nav-link {
+    @apply flex items-center hover:underline hover:text-lila hover:font-bold text-lg p-4 mx-8 my-6;
+  }
+  .nav-logo {
+    @apply text-xl font-bold mt-10 mb-16 mx-8;
+  }
+  .content {
+    @apply md:ml-64 p-8;
+  }
+
+  .registrieren {
+    @apply hover:bg-lightGray auth-input mb-4 text-white font-josefine pl-3;
+  }
+
+  .verifi {
+    @apply text-black flex justify-center font-josefine py-10 text-30 font-light;
+  }
+  .verifilog {
+    @apply text-black mt-4 hover:text-lila hover:underline flex justify-center font-josefine font-light py-5 text-24;
+  }
+  .group:hover .icon {
+    @apply text-lila;
+  }
+  .group:hover .link {
+    @apply underline text-lila font-bold;
+  }
+
+  .custom-modal .ant-modal-content {
+    @apply bg-gray-800 text-white rounded-lg shadow-lg p-4;
+  }
+
+  .custom-modal .ant-modal-header {
+    @apply bg-gray-800 text-white;
+  }
+
+  .custom-modal .ant-modal-title {
+    @apply text-lg font-bold text-white;
+  }
+
+  .custom-modal .ant-modal-footer {
+    @apply bg-gray-800;
+  }
+
+  .custom-modal .ant-btn {
+    @apply bg-purple-700 border-none text-white hover:bg-purple-500;
+  }
+
+  .crop-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: #333;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 640px) {
+    .crop-container {
+      height: 300px;
+    }
+
+    .custom-modal .ant-modal-content {
+      width: 90vw !important;
+      height: 90vh !important;
+    }
+
+    .custom-modal .ant-modal-body {
+      padding: 8px;
+    }
+  }
+}
+
+/* Dark mode background color change */
+body.dark-mode {
+  background-color: #2e2e2e; /* Dark grey background */
+  color: #e0e0e0; /* Light grey text for better readability */
+}
+
+body.dark-mode .bg-white,
+body.dark-mode .settings-box,
+body.dark-mode .rounded-xl,
+body.dark-mode .auth-input {
+  background-color: #3c3c3c; /* Slightly lighter grey for elements */
+  color: #e0e0e0; /* Light grey text for better readability */
+}
+
+body.dark-mode .border-black {
+  border-color: #ffffff; /* White borders for better visibility */
+}
+
+body.dark-mode .text-black {
+  color: #ffffff; /* Ensure text with class text-black turns white */
+}
+
+body.dark-mode .hover\:text-lila:hover {
+  color: #ac82ff; /* Keep hover effect for text-lila consistent */
+}
+
+body.dark-mode .bg-lightGray {
+  background-color: #444444; /* Darker grey for light grey backgrounds */
+}
+
+body.dark-mode .modal {
+  background-color: #3c3c3c; /* Darker modal background */
+  color: #e0e0e0; /* Ensure modal text is light */
+}
+
+body.dark-mode .rounded-xl {
+  background-color: #3c3c3c; /* Darker grey background for rounded elements */
+  color: #e0e0e0; /* Ensure text is light */
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #555555; /* Slightly darker background for better distinction */
+  color: #e0e0e0; /* Light text color for input fields */
+  border-color: #ac82ff; /* Purple border for input fields in dark mode */
+}
+
+body.dark-mode button {
+  color: #e0e0e0; /* Light text color for buttons */
+}
+
+body.dark-mode label {
+  color: #e0e0e0; /* Light text color for labels */
+}
+
+body.dark-mode .text-green {
+  color: #00ff00; /* Green text for availability status */
+}
+
+body.dark-mode .text-red {
+  color: #ff0000; /* Red text for error status */
+}
+
+body.dark-mode .hover\:text-lila {
+  color: #ac82ff; /* Purple text for hover effect */
+}
+
+body.dark-mode .ant-modal-content,
+body.dark-mode .ant-modal-header,
+body.dark-mode .ant-modal-footer {
+  background-color: #3c3c3c;
+  color: #e0e0e0;
+}
+
+body.dark-mode .ant-modal-title {
+  color: #e0e0e0;
+}
+
+body.dark-mode .ant-btn {
+  background-color: #ac82ff;
+  color: #e0e0e0;
+  border: none;
+}
+
+body.dark-mode .ant-btn:hover {
+  background-color: #8e6bd8;
+}
+
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.bg-light-bg {
+  background-color: #edece8;
+}
+
+.bg-dark-bg {
+  background-color: #333;
+}
+
+.text-light {
+  color: #000;
+}
+
+.text-dark {
+  color: #fff;
+}
+
+@layer base {
+  .group:hover .nav-link {
+    @apply underline text-lila font-bold;
+  }
+  .group:hover .icon {
+    @apply text-lila;
+  }
+}
+
+@layer authentification {
+  .auth-input {
+    @apply bg-darkGray placeholder-lightGray rounded-lg px-4 py-2 max-w-full h-10 text-white;
+  }
+
+  .auth-input::placeholder {
+    padding-left: 10px;
+  }
+
+  .rounded-button {
+    border-radius: 8px;
+  }
+}
+
+@layer profil-beitrage {
+  .beitrag-img {
+    @apply  p-2 md:p-4 w-1/3 aspect-square object-cover;
+  }
+
+  .modal {
+    @apply p-0 flex flex-col rounded-lg shadow-lg justify-center items-center;
+  }
+
+  .modal-content {
+    @apply flex w-full;
+  }
+
+  .modal-img {
+    @apply w-2/3 h-full object-contain;
+  }
+
+  .modal-details {
+    @apply w-1/2 pl-7 p-3 flex-grow;
+  }
+
+  .modal-input {
+    @apply flex-grow border border-gray-300 rounded-l px-4 py-2;
+  }
+  .modal-close-button {
+    @apply bg-gray-100 p-2 rounded-full hover:bg-gray-200 text-black;
+  }
+}
+
+@layer profilePicture {
+  .border-gradient {
+    position: relative;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(to right, #242424, #ac82ff, #eee9dc, #948b71);
+  }
+  .border-gradient img {
+    border-radius: 50%;
+    border: 4px solid transparent;
+    background: white;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+@layer login-regis {
+      .login-logo {
+        @apply mx-auto;
+      }
+
+@layer login-regis {
+  .login-logo {
+    @apply mx-auto;
+  }
+
+  .login-container {
+    @apply flex items-center justify-center min-h-screen;
+    
+
+      .login-container {
+        @apply flex items-center justify-center min-h-screen;
+      }
+
+      .login-container2 {
+        @apply max-w-md mx-auto mt-10 my-4 space-y-6;
+      }
+
+      .login-input {
+        @apply auth-input mb-4 text-white font-josefine w-full pl-3 font-light;
+      }
+
+      .registrieren-container {
+        @apply flex flex-col justify-center;
+      }
+    }
+  }
+}
+@media screen and (max-width: 640px) {
+  .home-container {
+    @apply mb-5 flex -m-14;
+  }
+
+  .home-container2 {
+    @apply flex flex-col;
+  }
+
+  .modal-details {
+    @apply flex-col items-start mt-4;
+  }
+
+  .home-like {
+    @apply flex;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .login-logo {
+    @apply mx-auto h-36 w-80;
+  }
+
+  .login-container {
+    @apply flex items-center justify-center h-screen;
+  }
+
+  .login-container2 {
+    @apply max-w-md mx-auto mt-10 space-y-6;
+  }
+
+  .login-input {
+    @apply auth-input text-white font-josefine w-full pl-3 font-light;
+  }
+
+  .registrieren {
+    @apply auth-input text-white font-josefine w-full pl-3 font-light;
+  }
+
+  .registrieren-container {
+    @apply flex flex-col justify-center;
+  }
+
+  .border-gradient {
+    position: relative;
+
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(to right, #242424, #ac82ff, #eee9dc, #948b71);
+  }
+}
+
+@layer suche {
+  @media (min-width: 640px) {
+    .container {
+      max-width: 640px;
+    }
+  }
+}
